@@ -9,10 +9,10 @@ public class Recipe {
     @Id
     private String title;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "recipe_ingredient",
-            joinColumns = @JoinColumn(name = "title"),
+            joinColumns = @JoinColumn(name = "recipe"),
             inverseJoinColumns = @JoinColumn(name = "ingredient"))
     private Set<Ingredient> ingredients;
 
@@ -34,4 +34,9 @@ public class Recipe {
         return this;
     }
 
+    @Override
+    public String toString()
+    {
+        return "Recipe{" + "title='" + title + '\'' + ", ingredients=" + ingredients + '}';
+    }
 }

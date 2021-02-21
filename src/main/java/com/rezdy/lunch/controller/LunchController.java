@@ -31,6 +31,12 @@ public class LunchController {
         return lunchService.getNonExpiredRecipesOnDate(LocalDate.parse(date));
     }
 
+
+    @GetMapping("/ingredients/listAll")
+    public @ResponseBody List<Ingredient> getIngredients(@RequestParam(value = "date") String date) {
+        return lunchService.loadIngredients(LocalDate.parse(date));
+    }
+
     /*@PostMapping("/recipe/save")
     public Recipe saveRecipe(@RequestBody Recipe recipe) {
 

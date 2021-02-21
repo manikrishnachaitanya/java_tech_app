@@ -41,4 +41,9 @@ public class Ingredient {
         return this;
     }
 
+    @Override
+    public String toString()
+    {
+        return "Ingredient{" + "title='" + title + '\'' + ", bestBefore=" + bestBefore + ", useBy=" + useBy + '}';
+    }
 }
