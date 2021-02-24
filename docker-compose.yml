@@ -1,8 +1,8 @@
 version: "3"
 services:
-  lunch-db:
+  lunch-db1:
     image: mysql:5.7.17
-    container_name: lunch-db
+    container_name: lunch-db1
     ports:
       - 3306:3306
     volumes:
